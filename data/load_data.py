@@ -1,9 +1,23 @@
 import pickle
 import glob
 import os
+from .process import get_audio_paths
 
-def load_data(data_type=None):
+def load_data(root_dir: str = None, test: bool = False):
+    """
+    오디오 데이터 경로와 label 을 불러오는 메서드.
+
+    Args:
+        root_dir (str): 데이터의 루트 경로
+        test (bool): test 환경 여부
+
+    Returns:
+        List, List : 오디오 경로 리스트, label 리스트
+    """
     try:
+        if test:
+            get_audio_paths(test=True)
+            
         # 현재 파일의 위치를 기준으로 src 폴더 상대 경로를 생성
         src_folder = os.path.join(os.path.dirname(__file__), '..', 'src')
         data_dict = {}
