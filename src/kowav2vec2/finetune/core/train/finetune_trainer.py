@@ -84,9 +84,7 @@ class FinetuneTrainer(BaseTrainer):
 
     def run_finetune(
             self,
-            method: str = "lora",
             args: dict = None,
-            lora_args: dict = None,
             **kwargs
     ):
         """
