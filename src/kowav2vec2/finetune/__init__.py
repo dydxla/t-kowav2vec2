@@ -1,0 +1,1 @@
+from kowav2vec2.finetune.core.train import FinetuneTrainer
